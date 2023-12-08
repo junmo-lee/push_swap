@@ -6,12 +6,11 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:01:08 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/29 19:58:25 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/12/08 15:23:35 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static void	add_back(t_list **lst, t_list *new, t_list **cache)
 {

@@ -6,12 +6,11 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:35:08 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/29 19:59:15 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/12/08 20:37:33 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static char	**free_ret_null(char **arr)
 {
