@@ -19,6 +19,8 @@ SRCS	= ./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
 SRCS_B	= ./gnl_bonus/get_next_line_bonus.c ./gnl_bonus/get_next_line_utils_bonus.c \
 			./node/lstclear_bonus.c ./node/push_back_bonus.c \
 			./parsing/parsing_bonus.c ./parsing/ps_atoll_bonus.c \
+			./node/node_swap_bonus.c ./node/node_push_bonus.c \
+			./node/node_rotate_bonus.c ./node/node_reverse_rotate_bonus.c \
 			main_bonus.c
 
 OBJS	= $(SRCS:.c=.o)

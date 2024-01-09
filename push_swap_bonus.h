@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 15:56:02 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/09 16:34:08 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/01/09 22:02:11 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,24 @@ typedef struct s_stack
 int			pb_b(t_node **head, t_node **tail, int val);
 void		lstclear_b(t_node **lst);
 
+int			sa(t_stack *stack);
+int			sb(t_stack *stack);
+int			ss(t_stack *stack);
+
+int			pa(t_stack *stack);
+int			pb(t_stack *stack);
+
+int			ra(t_stack *stack);
+int			rb(t_stack *stack);
+int			rr(t_stack *stack);
+
+int			rra(t_stack *stack);
+int			rrb(t_stack *stack);
+int			rrr(t_stack *stack);
+
 long long	ps_atoll_b(const char *str);
 int			add_one_b(char *s, t_node **head, t_node **tail);
 int			split_space_b(char *s, t_node **head, t_node **tail);
 int			parsing(int argc, char *argv[], t_node **head, t_node **tail);
-
 
 #endif
