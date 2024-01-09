@@ -17,7 +17,9 @@ SRCS	= ./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
 			main.c 
 		
 SRCS_B	= ./gnl_bonus/get_next_line_bonus.c ./gnl_bonus/get_next_line_utils_bonus.c \
-			main_bonus.c parsing_bonus.c parsing_utils_bonus.c 
+			./node/lstclear_bonus.c ./node/push_back_bonus.c \
+			./parsing/parsing_bonus.c ./parsing/ps_atoll_bonus.c \
+			main_bonus.c
 
 OBJS	= $(SRCS:.c=.o)
 OBJS_B	= $(SRCS_B:.c=.o)
@@ -28,6 +30,14 @@ DEBUG_B_O = $(filter-out main_bonus.o, $(OBJS_B)) debug_bonus.o
 DEF		= $(SRCS:.c=.d) 
 DEF_B	= $(SRCS_B:.c=.d)
 -include $(DEP) $(DEF_B)
+
+ifdef IGNORE_ERROR
+    CFLAGS :=  # IGNORE_ERROR가 설정되었을 때, CFLAGS를 빈 값으로 덮어쓰기, 해당 명령에서만 사용됨
+endif
+
+ifdef DEBUG_FLAG
+	CFLAGS += -g3 -fsanitize=address
+endif
 
 all: $(LIBFT) $(OBJS)
 	cp $(LIBFT) $(NAME)
@@ -50,9 +60,6 @@ re :
 	make fclean
 	make all
 
-ifdef IGNORE_ERROR
-    CFLAGS :=  # IGNORE_ERROR가 설정되었을 때, CFLAGS를 빈 값으로 덮어쓰기, 해당 명령에서만 사용됨
-endif
 
 debug : $(DEBUG_O)
 	$(CC) $(CFLAGS) $^ -o debug.out -I $(INC)
