@@ -6,13 +6,13 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 21:45:57 by junmlee           #+#    #+#             */
-/*   Updated: 2023/12/08 22:24:24 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/12/08 22:34:57 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-int	*make_array(int* cnt, t_parsing *lst)
+int	*make_array(int *cnt, t_parsing *lst)
 {
 	int	*ret;
 	int	i;
