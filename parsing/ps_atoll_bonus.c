@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_atoll_bonus.c                                   :+:      :+:    :+:   */
+/*   ps_atollonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "../push_swap_bonus.h"
 
-long long	ps_atoll_b(const char *str)
+long long	ps_atoll(const char *str)
 {
 	long long	ret;
 	int			sign;

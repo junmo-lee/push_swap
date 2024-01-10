@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:35:35 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/10 14:34:48 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/01/10 16:46:17 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@
 typedef struct s_node
 {
 	int				val;
-	struct s_node	*pre;
+	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
 
 typedef struct s_stack
 {
+	int		size;
 	t_node	*a_head;
 	t_node	*a_tail;
 	t_node	*b_head;
@@ -48,5 +49,11 @@ int			rr(t_stack *stack);
 int			rra(t_stack *stack);
 int			rrb(t_stack *stack);
 int			rrr(t_stack *stack);
+
+long long	ps_atoll(const char *str);
+int			parsing(int argc, char *argv[], t_stack *stack);
+
+t_node		*at(t_node *list, int idx);
+void		sort_list(t_node *list_head, t_node *list_tail, int len, int pos);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 15:56:02 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/10 14:39:19 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/01/10 15:52:49 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@
 typedef struct s_node
 {
 	int				val;
-	struct s_node	*pre;
+	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
 
 typedef struct s_stack
 {
+	int		size;
 	t_node	*a_head;
 	t_node	*a_tail;
 	t_node	*b_head;
@@ -49,10 +50,10 @@ int			rrb(t_stack *stack);
 int			rrr(t_stack *stack);
 
 
-long long	ps_atoll_b(const char *str);
-int			add_one_b(char *s, t_node **head, t_node **tail);
-int			split_space_b(char *s, t_node **head, t_node **tail);
-int			parsing(int argc, char *argv[], t_node **head, t_node **tail);
+long long	ps_atoll(const char *str);
+int			add_one(char *s, t_node **head, t_node **tail);
+int			split_space_b(char *s, t_stack *stack);
+int			parsing(int argc, char *argv[], t_stack *stack);
 int			get_oper(t_stack *stack);
 
 #endif
