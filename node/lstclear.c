@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 14:17:43 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/10 14:36:07 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/01/10 15:52:49 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	lstclear(t_node **lst)
 	{
 		temp = *lst;
 		temp->next = NULL;
-		temp->pre = NULL;
+		temp->prev = NULL;
 		temp->val = 0;
 		*lst = (*lst)->next;
 		free(temp);

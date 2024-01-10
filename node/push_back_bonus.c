@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 14:16:56 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/10 14:32:51 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/01/10 15:52:49 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	node_pb(t_node **head, t_node **tail, int val)
 	}
 	else
 	{
-		new->pre = *tail;
+		new->prev = *tail;
 		(*tail)->next = new; // 원래 있던 리스트의 마지막 next가 new를 가르킴
 		*tail = new; // tail을 갱신해줌
 	}

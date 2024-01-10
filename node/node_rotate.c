@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 21:38:40 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/10 14:36:34 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/01/10 15:52:49 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ra(t_stack *stack)
 	stack->a_head = stack->a_head->next;
 
 	stack->a_tail->next = temp;
-	temp->pre = stack->a_tail;
+	temp->prev = stack->a_tail;
 
 	stack->a_tail = temp;
 	stack->a_tail->next = NULL;
@@ -40,7 +40,7 @@ int	rb(t_stack *stack)
 	stack->b_head = stack->b_head->next;
 
 	stack->b_tail->next = temp;
-	temp->pre = stack->b_tail;
+	temp->prev = stack->b_tail;
 
 	stack->b_tail = temp;
 	stack->b_tail->next = NULL;
