@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 21:09:11 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/09 23:14:55 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/01/10 13:04:05 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ int	pb(t_stack *stack)
 		return (1);
 	temp = stack->a_head;
 	stack->a_head = stack->a_head->next;
-	if (stack->a_head != NULL)
+	if (stack->a_head == NULL)
+		stack->a_tail = NULL;
+	else
 		stack->a_head->pre = NULL;
 	temp->next = stack->b_head;
 
@@ -39,11 +41,13 @@ int	pa(t_stack *stack)
 		return (1);
 	temp = stack->b_head;
 	stack->b_head = stack->b_head->next;
-	if (stack->b_head != NULL)
+	if (stack->b_head == NULL) // b에서 하나 뽑았을 때 리스트가 비게 되면
+		stack->b_tail = NULL;
+	else
 		stack->b_head->pre = NULL;
 	temp->next = stack->a_head;
 
-	if (stack->a_head == NULL)
+	if (stack->a_head == NULL) // a가 연산 전 비어있다면 head를 tail로
 		stack->a_tail = temp;
 	stack->a_head = temp;
 	stack->a_head->pre = NULL;
