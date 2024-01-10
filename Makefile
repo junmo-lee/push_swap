@@ -14,6 +14,9 @@ INC		= push_swap.h
 INC_B	= push_swap_bonus.h
 
 SRCS	= ./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
+			./node/lstclear.c ./node/push_back.c \
+			./node/node_swap.c ./node/node_push.c \
+			./node/node_rotate.c ./node/node_reverse_rotate.c \
 			main.c 
 		
 SRCS_B	= ./gnl_bonus/get_next_line_bonus.c ./gnl_bonus/get_next_line_utils_bonus.c \

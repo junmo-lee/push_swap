@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:35:35 by junmlee           #+#    #+#             */
-/*   Updated: 2023/12/08 15:43:07 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/01/10 14:34:48 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,38 @@
 
 # include "libft/libft.h"
 # include "gnl/get_next_line.h"
+
+typedef struct s_node
+{
+	int				val;
+	struct s_node	*pre;
+	struct s_node	*next;
+}	t_node;
+
+typedef struct s_stack
+{
+	t_node	*a_head;
+	t_node	*a_tail;
+	t_node	*b_head;
+	t_node	*b_tail;
+}	t_stack;
+
+int			node_pb(t_node **head, t_node **tail, int val);
+void		lstclear(t_node **lst);
+
+int			sa(t_stack *stack);
+int			sb(t_stack *stack);
+int			ss(t_stack *stack);
+
+int			pa(t_stack *stack);
+int			pb(t_stack *stack);
+
+int			ra(t_stack *stack);
+int			rb(t_stack *stack);
+int			rr(t_stack *stack);
+
+int			rra(t_stack *stack);
+int			rrb(t_stack *stack);
+int			rrr(t_stack *stack);
 
 #endif

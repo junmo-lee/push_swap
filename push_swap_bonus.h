@@ -6,14 +6,14 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 15:56:02 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/10 11:54:36 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/01/10 14:39:19 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_BONUS_H
 
 # include "libft/libft.h"
-# include "gnl_bonus/get_next_line_bonus.h"
+# include "gnl/get_next_line_bonus.h"
 
 typedef struct s_node
 {
@@ -30,8 +30,8 @@ typedef struct s_stack
 	t_node	*b_tail;
 }	t_stack;
 
-int			pb_b(t_node **head, t_node **tail, int val);
-void		lstclear_b(t_node **lst);
+int			node_pb(t_node **head, t_node **tail, int val);
+void		lstclear(t_node **lst);
 
 int			sa(t_stack *stack);
 int			sb(t_stack *stack);

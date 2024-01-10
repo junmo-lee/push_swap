@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 21:45:57 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/09 16:53:52 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/01/10 14:33:36 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	add_one_b(char *s, t_node **head, t_node **tail)
 	t_node	*temp; // 중복체크시 사용
 
 	if (s[0] == '0' && (s[1] == '\0' || s[1] == '0')) // 그냥 정수 0인경우
-		return (pb_b(head, tail, 0)); // 만약 pb가 실패하면 같이 Error로 처리, 성공하면 같이 0
+		return (node_pb(head, tail, 0)); // 만약 pb가 실패하면 같이 Error로 처리, 성공하면 같이 0
 	val = ps_atoll_b(s);
 	if (val == 0 || val < INT_MIN || val > INT_MAX)
 		return (1);
@@ -32,7 +32,7 @@ int	add_one_b(char *s, t_node **head, t_node **tail)
 			return (1); // 어차피 return 1이 되면 모두 초기화
 		temp = temp->next;
 	}
-	return (pb_b(head, tail, (int)val));
+	return (node_pb(head, tail, (int)val));
 }
 
 // argv 하나를 개행단위로 분리해서 추가
@@ -68,7 +68,7 @@ int	parsing(int argc, char *argv[], t_node **head, t_node **tail)
 	{
 		if (split_space_b(argv[idx], head, tail) == 1)
 		{
-			lstclear_b(head);
+			lstclear(head);
 			return (1);
 		}
 		idx++;

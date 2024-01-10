@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 14:16:56 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/09 15:12:26 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/01/10 14:32:51 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // 리스트 tail의 포인터를 받아서 마지막에 값을 추가해주고 tail을 갱신
 // *head 와 *tail이 모두 NULL : 빈 리스트에 처음 값을 넣는것
 // ret : 성공시 0, 실패시 1(할당 실패 등)
-int	pb_b(t_node **head, t_node **tail, int val)
+int	node_pb(t_node **head, t_node **tail, int val)
 {
 	t_node	*new;
 
