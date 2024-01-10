@@ -17,9 +17,11 @@ SRCS	= ./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
 			./node/lstclear.c ./node/push_back.c \
 			./node/node_swap.c ./node/node_push.c \
 			./node/node_rotate.c ./node/node_reverse_rotate.c \
+			./parsing/parsing.c ./parsing/ps_atoll.c\
+			./sorting/sort_list.c ./sorting/sort_utils.c \
 			main.c 
 		
-SRCS_B	= ./gnl_bonus/get_next_line_bonus.c ./gnl_bonus/get_next_line_utils_bonus.c \
+SRCS_B	= ./gnl/get_next_line_bonus.c ./gnl/get_next_line_utils_bonus.c \
 			./node/lstclear_bonus.c ./node/push_back_bonus.c \
 			./node/node_swap_bonus.c ./node/node_push_bonus.c \
 			./node/node_rotate_bonus.c ./node/node_reverse_rotate_bonus.c \
@@ -56,6 +58,7 @@ bonus: $(LIBFT) $(OBJS_B)
 clean :
 	make -C $(LIBFT_DIR) clean
 	rm -f $(OBJS) $(OBJS_B) $(DEF) $(DEF_B)
+	find . -type f -name 'debug*' \( -name '*.o' -o -name '*.d' \) -exec rm {} +
 
 fclean :
 	make -C $(LIBFT_DIR) fclean
@@ -65,7 +68,6 @@ fclean :
 re :
 	make fclean
 	make all
-
 
 debug : $(DEBUG_O)
 	$(CC) $(CFLAGS) $^ -o debug.out -I $(INC)
