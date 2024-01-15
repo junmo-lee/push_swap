@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 21:38:40 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/10 15:52:49 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:16:05 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,11 @@ int	ra(t_stack *stack)
 		return (1);
 	temp = stack->a_head;
 	stack->a_head = stack->a_head->next;
-
+	stack->a_head->prev = NULL;
 	stack->a_tail->next = temp;
 	temp->prev = stack->a_tail;
-
+	temp->next = NULL;
 	stack->a_tail = temp;
-	stack->a_tail->next = NULL;
-
 	return (0);
 }
 
@@ -38,12 +36,11 @@ int	rb(t_stack *stack)
 		return (1);
 	temp = stack->b_head;
 	stack->b_head = stack->b_head->next;
-
+	stack->b_head->prev = NULL;
 	stack->b_tail->next = temp;
 	temp->prev = stack->b_tail;
-
+	temp->next = NULL;
 	stack->b_tail = temp;
-	stack->b_tail->next = NULL;
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 21:09:11 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/10 15:52:49 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/01/15 15:40:40 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,18 @@ int	pb(t_stack *stack)
 		return (1);
 	temp = stack->a_head;
 	stack->a_head = stack->a_head->next;
-	if (stack->a_head == NULL)
+	if (stack->a_head->next == NULL)
+	{
+		stack->a_head = NULL;
 		stack->a_tail = NULL;
+	}
 	else
 		stack->a_head->prev = NULL;
 	temp->next = stack->b_head;
-
 	if (stack->b_head == NULL)
 		stack->b_tail = temp;
+	else
+		stack->b_head->prev = temp;
 	stack->b_head = temp;
 	stack->b_head->prev = NULL;
 	return (0);
@@ -41,16 +45,19 @@ int	pa(t_stack *stack)
 		return (1);
 	temp = stack->b_head;
 	stack->b_head = stack->b_head->next;
-	if (stack->b_head == NULL) // b에서 하나 뽑았을 때 리스트가 비게 되면
+	if (stack->b_head->next == NULL)
+	{
+		stack->b_head = NULL;
 		stack->b_tail = NULL;
+	}
 	else
 		stack->b_head->prev = NULL;
 	temp->next = stack->a_head;
-
-	if (stack->a_head == NULL) // a가 연산 전 비어있다면 head를 tail로
+	if (stack->a_head == NULL)
 		stack->a_tail = temp;
+	else
+		stack->a_head->prev = temp;
 	stack->a_head = temp;
 	stack->a_head->prev = NULL;
 	return (0);
 }
-
