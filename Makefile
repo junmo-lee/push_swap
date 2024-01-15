@@ -3,6 +3,9 @@
 NAME	= push_swap
 NAME_B	= checker
 
+DEBUG_NAME = debug.out
+DEBUG_NAME_B = debug_bonus.out
+
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 CDEF	= -MMD -MP
@@ -58,22 +61,22 @@ bonus: $(LIBFT) $(OBJS_B)
 clean :
 	make -C $(LIBFT_DIR) clean
 	rm -f $(OBJS) $(OBJS_B) $(DEF) $(DEF_B)
-	find . -type f -name 'debug*' \( -name '*.o' -o -name '*.d' \) -exec rm {} +
+	rm -f $(DEBUG_O) $(DEBUG_B_O)
 
 fclean :
 	make -C $(LIBFT_DIR) fclean
 	rm -f $(OBJS) $(OBJS_B) $(DEF) $(DEF_B) $(NAME) $(NAME_B)
-	find . -type f -name 'debug*' ! -name 'debug.c' ! -name 'debug_bonus.c' -exec rm {} +
+	rm -f $(DEBUG_O) $(DEBUG_B_O) $(DEBUG_NAME) $(DEBUG_NAME_B)
 
 re :
 	make fclean
 	make all
 
 debug : $(DEBUG_O)
-	$(CC) $(CFLAGS) $^ -o debug.out -I $(INC)
+	$(CC) $(CFLAGS) $^ -o $(DEBUG_NAME) -I $(INC)
 	
 debug_bonus : $(DEBUG_B_O)
-	$(CC) $(CFLAGS) $^ -o debug_bonus.out -I $(INC_B)
+	$(CC) $(CFLAGS) $^ -o $(DEBUG_NAME_B) -I $(INC_B)
 
 $(LIBFT) :
 	make -C $(LIBFT_DIR) all
