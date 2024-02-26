@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:35:35 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/10 16:46:17 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/02/26 21:28:38 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,16 @@ typedef struct s_stack
 	t_node	*b_tail;
 }	t_stack;
 
+enum e_command {
+	e_pa = 1,
+	e_pb = 2,
+	e_ra = 3,
+	e_rb = 4,
+	e_rra = 5,
+	e_rrb = 6
+};
+
+
 int			node_pb(t_node **head, t_node **tail, int val);
 void		lstclear(t_node **lst);
 
@@ -54,6 +64,11 @@ long long	ps_atoll(const char *str);
 int			parsing(int argc, char *argv[], t_stack *stack);
 
 t_node		*at(t_node *list, int idx);
-void		sort_list(t_node *list_head, t_node *list_tail, int len, int pos);
+int			is_sorted(t_node *start, t_node *end, int is_ascending);
+int			make_param(int len, t_node *start_node, int pos, int is_ascending);
+
+int			*stack_to_int_array(t_stack *stack);
+
+int			*make_lis(int *arr, int *dp, int *temp, int size);
 
 #endif

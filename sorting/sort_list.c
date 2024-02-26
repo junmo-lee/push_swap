@@ -3,77 +3,68 @@
 /*                                                        :::      ::::::::   */
 /*   sort_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:44:49 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/15 22:21:14 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/02/26 16:12:17 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h> // 나중에 없애기
 #include "../push_swap.h"
 
-//LCS, LIS 호출 해서 정렬된 부분을 확인하는 역할
-//param에 sorted_n 과 sorted_arr를 넣어줌
-int	sorted_part(t_stack *stack, t_sort_param *param)
-{
+// int	split(t_stack *stack)
+// {
+// 	t_node	*temp;
+// 	int		*lis_arr;
+// 	int		*lis;
+// 	int		a_size;
+// 	int		idx_a;
 
-}
+// 	a_size = stack->size;
+// 	// a_head와 a_tail 이 같을때까지 반복(비어있을때까지)
+// 	while (stack->a_head != stack->a_tail)
+// 	{
+// 		// lis_arr로 복사해오기
+// 		idx_a = 0;
+// 		lis_arr = (int *)malloc(sizeof(int) * a_size);
+// 		temp = stack->a_head;
+// 		while (temp->next != NULL)
+// 		{
+// 			lis_arr[idx_a++] = temp->val;
+// 			temp = temp->next;
+// 		}
+// 		// lis 만들기, 0으로 끝나는 것을 확인
+// 		lis = make_lis(lis_arr, idx_a);
+// 		// 다시 a스택을 돌면서 lis 이면 pb하기
+// 		temp = stack->a_head;
+// 		while (temp->next != NULL)
+// 		{
+// 			if (is_in(temp->val, lis))
+// 				pb(stack);
+// 			else
+// 				ra(stack);
+// 			temp = temp->next;
+// 		}
+// 		a_size -= idx_a;
+// 	}
+// 	return (0);
+// }
 
-int	split_stack(t_stack *stack, t_sort_param *param)
-{
-	t_node	*i;
-	int		idx;
+// int	*make_lis(int *lis_arr, int num)
+// {
+// 	return (NULL);
+// }
 
-	i = param->start_node;
-	idx = param->len;
-	while (idx--)
-	{
-		if (in_arr(i->val, param->sorted_arr))
-			reverse(stack, param);
-		else if (i->val > param->middle)
-		{
-			push_head(stack, param);
-			param->big_n++;
-		}
-		else
-		{
-			push_tail(stack, param);
-			param->small_n++;
-		}
-		i = i->next;
-	}
-}
+// int	merge(t_stack *stack, t_command *command)
+// {
+// 	return (0);
+// }
 
-// LIS 부분 제외하고 나머지 부분 재귀로 
-int	recursion(t_stack *stack, t_sort_param *param)
-{
-	
-}
+// int	sort(t_stack *stack, t_command *command)
+// {
+// 	if (split(stack) == 1)
+// 		return (0);
+// 	return (merge(stack, command));
 
-// 3개로 나누어진거 모으는 역할
-int	marge_stack(t_stack *stack, t_sort_param *param)
-{
-	int	max;
-
-	max = INT_MIN;
-	while ((param->len)--)
-	{
-		if ()	
-	}
-}
-
-// 성공적으로 정렬되었다면 0리턴
-int	sort_list(t_stack *stack, t_sort_param *param)
-{
-	if (make_param(stack, param) == 1)
-		return (1);
-	if (is_sorted(param->start_node, at(param->start_node, param->len), param->is_ascending))
-		return (0);
-	if (sorted_part(stack, param) == 1)
-		return (1);
-	split_stack(stack, param);
-	recursion(stack, param);
-	marge_stack(stack, param);
-	return (0);
-}
+// }

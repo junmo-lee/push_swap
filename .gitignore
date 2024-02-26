@@ -1,0 +1,10 @@
+*.a
+*.o
+*.d
+*.gch
+a.out
+*debug*
+checker_Mac
+.DS_Store
+push_swap
+checker

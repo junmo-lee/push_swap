@@ -22,6 +22,8 @@ SRCS	= ./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
 			./node/node_rotate.c ./node/node_reverse_rotate.c \
 			./parsing/parsing.c ./parsing/ps_atoll.c\
 			./sorting/sort_list.c ./sorting/sort_utils.c \
+			./sorting/stack_to_int_array.c \
+			./lis/lis.c \
 			main.c 
 		
 SRCS_B	= ./gnl/get_next_line_bonus.c ./gnl/get_next_line_utils_bonus.c \
@@ -72,10 +74,12 @@ re :
 	make fclean
 	make all
 
-debug : $(DEBUG_O)
-	$(CC) $(CFLAGS) $^ -o $(DEBUG_NAME) -I $(INC)
+debug : $(LIBFT) $(DEBUG_O)
+	cp $(LIBFT) $(NAME)
+	$(CC) $(CFLAGS) $^ -o $(DEBUG_NAME) -I $(INC) -L ./libft -lft
 	
-debug_bonus : $(DEBUG_B_O)
+debug_bonus : $(LIBFT) $(DEBUG_B_O)
+	cp $(LIBFT) $(NAME)
 	$(CC) $(CFLAGS) $^ -o $(DEBUG_NAME_B) -I $(INC_B)
 
 $(LIBFT) :

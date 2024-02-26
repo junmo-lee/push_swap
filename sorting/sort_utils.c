@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 14:48:55 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/15 18:22:48 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/02/26 16:12:56 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,13 @@ int	is_sorted(t_node *start, t_node *end, int is_ascending)
 }
 
 // 파라메터 체크하고 만드는 역할
-t_sort_param	*make_param(int len, t_node *start_node, int pos, int is_ascending)
-{
-	t_sort_param	*ret;
+// t_sort_param	*make_param(int len, t_node *start_node, int pos, int is_ascending)
+// {
+// 	t_sort_param	*ret;
 
-	ret = malloc(sizeof(t_sort_param));
-	if (ret == NULL)
-		return (NULL);
-	ft_memset(ret, 0, sizeof(t_sort_param));
-	return (ret);
-}
+// 	ret = malloc(sizeof(t_sort_param));
+// 	if (ret == NULL)
+// 		return (NULL);
+// 	ft_memset(ret, 0, sizeof(t_sort_param));
+// 	return (ret);
+// }
