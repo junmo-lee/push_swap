@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:35:35 by junmlee           #+#    #+#             */
-/*   Updated: 2024/02/26 21:28:38 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/02/27 22:08:38 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,10 @@ int			is_sorted(t_node *start, t_node *end, int is_ascending);
 int			make_param(int len, t_node *start_node, int pos, int is_ascending);
 
 int			*stack_to_int_array(t_stack *stack);
+int			*stack_to_int_array_del_dup(t_stack *stack, int *ans);
+
+int			get_lis_len(int *temp);
 
 int			*make_lis(int *arr, int *dp, int *temp, int size);
-
+int			*make_lcs(int *arr, int *dp, int *temp, int size);
 #endif

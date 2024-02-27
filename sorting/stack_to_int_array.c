@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:15:22 by junmlee           #+#    #+#             */
-/*   Updated: 2024/02/26 16:26:33 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/02/27 22:08:30 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	*stack_to_int_array(t_stack *stack)
 	t_node	*temp;
 	int		i;
 
-	arr = (int *)malloc(stack->size * sizeof(int));
+	arr = (int *)malloc((stack->size + 1) * sizeof(int));
 	if (arr == NULL)
 		return (NULL);
 	ft_memset(arr, stack->size, sizeof(int));
@@ -29,5 +29,32 @@ int	*stack_to_int_array(t_stack *stack)
 		arr[i++] = temp->val;
 		temp = temp->next;
 	}
+	arr[i] = 0;
+	return (arr);
+}
+
+int	*stack_to_int_array_del_dup(t_stack *stack, int *ans)
+{
+	int		*arr;
+	t_node	*temp;
+	int		i;
+	int		j;
+
+	arr = (int *)malloc(stack->size * sizeof(int));
+	if (arr == NULL)
+		return (NULL);
+	ft_memset(arr, 0, stack->size * sizeof(int));
+	i = 0;
+	j = 0;
+	temp = stack->a_head;
+	while (temp != NULL)
+	{
+		if (temp->val == ans[j])
+			j++;
+		else
+			arr[i++] = temp->val;
+		temp = temp->next;
+	}
+	arr[i] = 0;
 	return (arr);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 21:45:57 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/10 15:17:23 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/02/27 20:50:49 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 // ret : 성공시 0, 실패(Error) 1
 int	add_one(char *s, t_node **head, t_node **tail)
 {
-	int		val;
+	long long	val;
 	t_node	*temp; // 중복체크시 사용
 
-	if (s[0] == '0' && (s[1] == '\0' || s[1] == '0')) // 그냥 정수 0인경우
+	if (s[0] == '0' && s[1] == '\0') // 그냥 정수 0인경우
 		return (node_pb(head, tail, 0)); // 만약 pb가 실패하면 같이 Error로 처리, 성공하면 같이 0
 	val = ps_atoll(s);
 	if (val == 0 || val < INT_MIN || val > INT_MAX)
