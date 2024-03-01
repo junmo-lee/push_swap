@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_oper_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 11:15:28 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/10 13:12:19 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/03/01 18:50:07 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int	swap_oper(t_stack *stack, char *str)
 	if (str[2] != '\n' || str[3] != '\0')
 		return (5);
 	if (str[1] == 'a')
-		return (sa(stack));
+		return (sa_b(stack));
 	else if (str[1] == 'b')
-		return (sb(stack));
+		return (sb_b(stack));
 	else if (str[1] == 's')
-		return (ss(stack));
+		return (ss_b(stack));
 	else
 		return (5);
 }
@@ -32,9 +32,9 @@ int	push_oper(t_stack *stack, char *str)
 	if (str[2] != '\n' || str[3] != '\0')
 		return (5);
 	if (str[1] == 'a')
-		return (pa(stack));
+		return (pa_b(stack));
 	else if (str[1] == 'b')
-		return (pb(stack));
+		return (pb_b(stack));
 	else
 		return (5);
 }
@@ -44,11 +44,11 @@ int	reverse_rotate_oper(t_stack *stack, char *str)
 	if (str[3] != '\n' || str[4] != '\0')
 		return (5);
 	if (str[2] == 'a')
-		return (rra(stack));
+		return (rra_b(stack));
 	else if (str[2] == 'b')
-		return (rrb(stack));
+		return (rrb_b(stack));
 	else if (str[2] == 'r')
-		return (rrr(stack));
+		return (rrr_b(stack));
 	return (5);
 }
 
@@ -57,16 +57,16 @@ int	rotate_oper(t_stack *stack, char *str)
 	if (str[1] == 'r')
 	{
 		if (str[2] == '\n' && str[3] == '\0')
-			return (rr(stack));
+			return (rr_b(stack));
 		else
 			return (reverse_rotate_oper(stack, str));
 	}
 	if (str[2] != '\n' || str[3] != '\0')
 		return (5);
 	if (str[1] == 'a')
-		return (str[2] == ra(stack));
+		return (str[2] == ra_b(stack));
 	else if (str[1] == 'b')
-		return (rb(stack));
+		return (rb_b(stack));
 	return (5);
 }
 

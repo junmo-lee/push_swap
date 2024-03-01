@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 02:24:18 by junmlee           #+#    #+#             */
-/*   Updated: 2024/02/27 22:10:49 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/02/28 19:56:13 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,10 +119,10 @@ void	fill_dp_lcs(int *arr, int *dp, int *temp, int size)
 	int	i;
 
 	temp_size = 1;
-	i = 0;
+	i = 1;
 	while (i < size)
 	{
-		dp[i] = upper_bound(temp, temp_size + 1, arr[i]);
+		dp[i] = lower_bound(temp, temp_size + 1, arr[i]);
 		if (temp[dp[i]] == 0)
 			temp[temp_size++] = arr[i];
 		else if (arr[i] > temp[dp[i]])
@@ -154,7 +154,7 @@ int	*make_lcs(int *arr, int *dp, int *temp, int size)
 	i = find_idx;
 	while (--i > 0)
 	{
-		if (arr[i] > arr[find_idx] && dp[i] + 1 == dp[find_idx])
+		if (arr[i] < arr[find_idx] && dp[i] + 1 == dp[find_idx])
 		{
 			find_idx = i;
 			*(--ret) = arr[i];

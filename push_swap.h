@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:35:35 by junmlee           #+#    #+#             */
-/*   Updated: 2024/02/27 22:08:38 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/03/01 18:52:28 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,6 @@ typedef struct s_stack
 	t_node	*b_head;
 	t_node	*b_tail;
 }	t_stack;
-
-enum e_command {
-	e_pa = 1,
-	e_pb = 2,
-	e_ra = 3,
-	e_rb = 4,
-	e_rra = 5,
-	e_rrb = 6
-};
 
 
 int			node_pb(t_node **head, t_node **tail, int val);

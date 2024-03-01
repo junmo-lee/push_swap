@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   node_rotate.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 21:38:40 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/15 15:16:05 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/03/01 18:51:51 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	ra(t_stack *stack)
 	temp->prev = stack->a_tail;
 	temp->next = NULL;
 	stack->a_tail = temp;
+	write(1, "ra\n", 3);
 	return (0);
 }
 
@@ -41,11 +42,12 @@ int	rb(t_stack *stack)
 	temp->prev = stack->b_tail;
 	temp->next = NULL;
 	stack->b_tail = temp;
-
+	write(1, "rb\n", 3);
 	return (0);
 }
 
 int	rr(t_stack *stack)
 {
+	write(1, "rr\n", 3);
 	return (ra(stack) + rb(stack));
 }

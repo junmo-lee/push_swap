@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 15:56:02 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/10 15:52:49 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/03/01 18:48:16 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,20 @@ typedef struct s_stack
 int			node_pb(t_node **head, t_node **tail, int val);
 void		lstclear(t_node **lst);
 
-int			sa(t_stack *stack);
-int			sb(t_stack *stack);
-int			ss(t_stack *stack);
+int			sa_b(t_stack *stack);
+int			sb_b(t_stack *stack);
+int			ss_b(t_stack *stack);
 
-int			pa(t_stack *stack);
-int			pb(t_stack *stack);
+int			pa_b(t_stack *stack);
+int			pb_b(t_stack *stack);
 
-int			ra(t_stack *stack);
-int			rb(t_stack *stack);
-int			rr(t_stack *stack);
+int			ra_b(t_stack *stack);
+int			rb_b(t_stack *stack);
+int			rr_b(t_stack *stack);
 
-int			rra(t_stack *stack);
-int			rrb(t_stack *stack);
-int			rrr(t_stack *stack);
+int			rra_b(t_stack *stack);
+int			rrb_b(t_stack *stack);
+int			rrr_b(t_stack *stack);
 
 
 long long	ps_atoll(const char *str);

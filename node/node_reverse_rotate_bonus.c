@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   node_reverse_rotate_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 21:57:53 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/15 15:15:26 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/03/01 18:53:57 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_bonus.h"
 
-int	rra(t_stack *stack)
+int	rra_b(t_stack *stack)
 {
 	t_node	*temp;
 
@@ -28,7 +28,7 @@ int	rra(t_stack *stack)
 	return (0);
 }
 
-int	rrb(t_stack *stack)
+int	rrb_b(t_stack *stack)
 {
 	t_node	*temp;
 
@@ -44,7 +44,7 @@ int	rrb(t_stack *stack)
 	return (0);
 }
 
-int	rrr(t_stack *stack)
+int	rrr_b(t_stack *stack)
 {
-	return (rra(stack) + rrb(stack));
+	return (rra_b(stack) + rrb_b(stack));
 }

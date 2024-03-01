@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   node_swap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 17:35:04 by junmlee           #+#    #+#             */
-/*   Updated: 2024/01/10 12:07:07 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/03/01 18:53:29 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_bonus.h"
 
-int	sa(t_stack *stack)
+int	sa_b(t_stack *stack)
 {
 	int	temp;
 
@@ -26,7 +26,7 @@ int	sa(t_stack *stack)
 	return (0);
 }
 
-int	sb(t_stack *stack)
+int	sb_b(t_stack *stack)
 {
 	int	temp;
 
@@ -40,7 +40,7 @@ int	sb(t_stack *stack)
 	return (0);
 }
 
-int	ss(t_stack *stack)
+int	ss_b(t_stack *stack)
 {
-	return (sa(stack) + sb(stack));
+	return (sa_b(stack) + sb_b(stack));
 }
