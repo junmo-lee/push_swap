@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 21:45:57 by junmlee           #+#    #+#             */
-/*   Updated: 2024/02/27 20:50:49 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/03/03 16:09:14 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	add_one(char *s, t_node **head, t_node **tail)
 	long long	val;
 	t_node	*temp; // 중복체크시 사용
 
-	if (s[0] == '0' && s[1] == '\0') // 그냥 정수 0인경우
+	if (s[0] == '0' && (s[1] == '\0' || s[1] == ' ')) // 그냥 정수 0인경우
 		return (node_pb(head, tail, 0)); // 만약 pb가 실패하면 같이 Error로 처리, 성공하면 같이 0
 	val = ps_atoll(s);
 	if (val == 0 || val < INT_MIN || val > INT_MAX)

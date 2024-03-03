@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 15:54:11 by junmlee           #+#    #+#             */
-/*   Updated: 2024/03/01 19:09:41 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/03/03 15:46:07 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	print_error_ret1(void)
 {
-	write(STDOUT_FILENO, "Error\n", 7);
+	write(STDERR_FILENO, "Error\n", 6);
 	return (1);
 }
 

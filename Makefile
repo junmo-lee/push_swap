@@ -52,13 +52,36 @@ ifdef DEBUG_FLAG
 	CFLAGS += -g3 -fsanitize=address
 endif
 
-all: $(LIBFT) $(OBJS)
+$(LIBFT) :
+	make -C $(LIBFT_DIR) all
+
+%.o : %.c
+	$(CC) $(CFLAGS) $(CDEF) -c $< -o $@
+
+$(NAME): $(LIBFT) $(OBJS)
 	cp $(LIBFT) $(NAME)
 	$(CC) $(CFLAGS) $(CDEF) $^ -o $(NAME) -I $(INC)
 
-bonus: $(LIBFT) $(OBJS_B)
+$(NAME_B): $(LIBFT) $(OBJS_B)
 	cp $(LIBFT) $(NAME)
 	$(CC) $(CFLAGS) $(CDEF) $^ -o $(NAME_B) -I $(INC_B)
+
+$(DEBUG_NAME): $(LIBFT) $(DEBUG_O)
+	cp $(LIBFT) $(NAME)
+	$(CC) $(CFLAGS) $^ -o $(DEBUG_NAME) -I $(INC) -L ./libft -lft
+
+$(DEBUG_NAME_B): $(LIBFT) $(DEBUG_B_O)
+	cp $(LIBFT) $(NAME)
+	$(CC) $(CFLAGS) $^ -o $(DEBUG_NAME_B) -I $(INC_B)
+
+
+all : $(NAME)
+
+bonus : $(NAME_B)
+
+debug : $(DEBUG_NAME)
+	
+debug_bonus : $(DEBUG_NAME_B)
 
 clean :
 	make -C $(LIBFT_DIR) clean
@@ -73,25 +96,5 @@ fclean :
 re :
 	make fclean
 	make all
-
-debug : $(LIBFT) $(DEBUG_O)
-	cp $(LIBFT) $(NAME)
-	$(CC) $(CFLAGS) $^ -o $(DEBUG_NAME) -I $(INC) -L ./libft -lft
-	
-debug_bonus : $(LIBFT) $(DEBUG_B_O)
-	cp $(LIBFT) $(NAME)
-	$(CC) $(CFLAGS) $^ -o $(DEBUG_NAME_B) -I $(INC_B)
-
-$(LIBFT) :
-	make -C $(LIBFT_DIR) all
-
-$(NAME) :
-	make all
-
-$(NAME_B) :
-	make bonus
-
-%.o : %.c
-	$(CC) $(CFLAGS) $(CDEF) -c $< -o $@
 
 .PHONY : all bonus clean fclean re

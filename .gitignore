@@ -2,6 +2,10 @@
 *.o
 *.d
 *.gch
+*.py
+*.pylog
+*.log
+push_swap_tester/
 a.out
 *debug*
 checker_Mac
