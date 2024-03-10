@@ -22,7 +22,7 @@ SRCS	= ./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
 			./node/node_rotate.c ./node/node_reverse_rotate.c \
 			./parsing/parsing.c ./parsing/ps_atoll.c\
 			./sorting/sort_list.c ./sorting/sort_utils.c \
-			./sorting/stack_to_int_array.c \
+			./sorting/stack_to_int_array.c ./sorting/3_sort.c \
 			./lis/lis.c \
 			main.c 
 		

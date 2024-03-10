@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:35:35 by junmlee           #+#    #+#             */
-/*   Updated: 2024/03/01 18:52:28 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/03/10 21:25:00 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,14 @@ int			parsing(int argc, char *argv[], t_stack *stack);
 
 t_node		*at(t_node *list, int idx);
 int			is_sorted(t_node *start, t_node *end, int is_ascending);
-int			make_param(int len, t_node *start_node, int pos, int is_ascending);
 
-int			*stack_to_int_array(t_stack *stack);
-int			*stack_to_int_array_del_dup(t_stack *stack, int *ans);
+long		*stack_to_int_array(t_stack *stack);
 
-int			get_lis_len(int *temp);
+int			get_lis_len(long *temp);
+long		*make_lis(long *arr, long *dp, long *temp, int size);
 
-int			*make_lis(int *arr, int *dp, int *temp, int size);
-int			*make_lcs(int *arr, int *dp, int *temp, int size);
+void		ft_memset_long(long *arr, long val, int len);
+
+void		simple_sort(t_stack *stack);
+
 #endif
