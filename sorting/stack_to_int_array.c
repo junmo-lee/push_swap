@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:15:22 by junmlee           #+#    #+#             */
-/*   Updated: 2024/03/10 21:21:49 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/03/11 18:26:24 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,17 @@ long	*stack_to_int_array(t_stack *stack)
 	return (arr);
 }
 
-int	*stack_to_int_array_del_dup(t_stack *stack, int *ans)
+long	*stack_to_int_array_del_dup(t_stack *stack, long *ans)
 {
-	int		*arr;
+	long	*arr;
 	t_node	*temp;
-	int		i;
-	int		j;
+	long	i;
+	long	j;
 
-	arr = (int *)malloc(stack->size * sizeof(int));
+	arr = (long *)malloc((stack->size + 1) * sizeof(long));
 	if (arr == NULL)
 		return (NULL);
-	ft_memset(arr, 0, stack->size * sizeof(int));
+	ft_memset_long(arr, LONG_MIN, stack->size + 1);
 	i = 0;
 	j = 0;
 	temp = stack->a_head;
@@ -55,6 +55,6 @@ int	*stack_to_int_array_del_dup(t_stack *stack, int *ans)
 			arr[i++] = temp->val;
 		temp = temp->next;
 	}
-	arr[i] = 0;
+	arr[i] = LONG_MIN;
 	return (arr);
 }

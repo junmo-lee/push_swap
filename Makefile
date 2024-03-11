@@ -23,6 +23,7 @@ SRCS	= ./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
 			./parsing/parsing.c ./parsing/ps_atoll.c\
 			./sorting/sort_list.c ./sorting/sort_utils.c \
 			./sorting/stack_to_int_array.c ./sorting/3_sort.c \
+			./sorting/pb_quick_sort.c ./sorting/split_3.c \
 			./lis/lis.c \
 			main.c 
 		
@@ -60,19 +61,19 @@ $(LIBFT) :
 
 $(NAME): $(LIBFT) $(OBJS)
 	cp $(LIBFT) $(NAME)
-	$(CC) $(CFLAGS) $(CDEF) $^ -o $(NAME) -I $(INC)
+	$(CC) $(CFLAGS) $(CDEF) $^ -o $(NAME) -I $(INC) -L ./libft -lft
 
 $(NAME_B): $(LIBFT) $(OBJS_B)
 	cp $(LIBFT) $(NAME)
-	$(CC) $(CFLAGS) $(CDEF) $^ -o $(NAME_B) -I $(INC_B)
+	$(CC) $(CFLAGS) $(CDEF) $^ -o $(NAME_B) -I $(INC_B) -L ./libft -lft
 
 $(DEBUG_NAME): $(LIBFT) $(DEBUG_O)
 	cp $(LIBFT) $(NAME)
-	$(CC) $(CFLAGS) $^ -o $(DEBUG_NAME) -I $(INC) -L ./libft -lft
+	$(CC) $(CFLAGS) $(CDEF) $^ -o $(DEBUG_NAME) -I $(INC) -L ./libft -lft
 
 $(DEBUG_NAME_B): $(LIBFT) $(DEBUG_B_O)
 	cp $(LIBFT) $(NAME)
-	$(CC) $(CFLAGS) $^ -o $(DEBUG_NAME_B) -I $(INC_B)
+	$(CC) $(CFLAGS) $(CDEF) $^ -o $(DEBUG_NAME_B) -I $(INC_B) -L ./libft -lft
 
 
 all : $(NAME)
@@ -97,4 +98,4 @@ re :
 	make fclean
 	make all
 
-.PHONY : all bonus clean fclean re
+.PHONY : all bonus clean fclean re debug debug_bonus
