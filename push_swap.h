@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:35:35 by junmlee           #+#    #+#             */
-/*   Updated: 2024/03/11 20:31:34 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/03/20 08:33:45 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,26 @@ typedef struct s_stack
 	t_node	*b_head;
 	t_node	*b_tail;
 }	t_stack;
+
+typedef enum e_case
+{
+	rr_rab = 0,
+	rrr_rrab = 1,
+	ra_rrb = 2,
+	rra_rb = 3
+}	t_case;
+
+
+typedef struct s_param
+{
+	long	*a_pa;
+	long	a_size;
+	long	*b_pa;
+	long	b_size;
+	long	ways[4];
+	long	min_idx;
+	long	min_val;
+}	t_param;
 
 
 int			node_pb(t_node **head, t_node **tail, int val);
@@ -67,4 +87,7 @@ void		ft_memset_long(long *arr, long val, int len);
 void		simple_sort(t_stack *stack);
 void		pb_quick_sort(long *data, long start, long end);
 void		split_3(t_stack *stack, long *arr_lis, long *del_dup);
+void		greedy_main(t_stack *stack);
+void		do_best_oper(t_stack *stack, t_param *param);
+
 #endif

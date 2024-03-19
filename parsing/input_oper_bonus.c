@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 11:15:28 by junmlee           #+#    #+#             */
-/*   Updated: 2024/03/01 18:50:07 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/03/11 22:04:50 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,8 @@ int	rotate_oper(t_stack *stack, char *str)
 // stdin에서 한 줄 읽어서 맞는 함수를 실행
 // ret : EOF 도달 or 읽기오류시 1, 성공시 0
 // ex) while(!get_oper(&stack)) 
-int	get_oper(t_stack *stack)
+int	get_oper(t_stack *stack, char *str)
 {
-	char	*str;
-
-	str = get_next_line(STDIN_FILENO);
 	if (str == NULL)
 		return (10);
 	if (str[0] == 's')

@@ -22,5 +22,6 @@
 		"get_next_line.h": "c",
 		"algorithm": "c",
 		"random": "c"
-	}
+	},
+	"C_Cpp.errorSquiggles": "disabled"
 }
