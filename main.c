@@ -6,12 +6,36 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 15:54:55 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 22:02:50 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 22:32:07 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
+
+int	is_sorted(t_node *start, t_node *end, int is_ascending)
+{
+	if (is_ascending == 1)
+	{
+		while (start != end)
+		{
+			if (start->next->val < start->val)
+				return (0);
+			start = start->next;
+		}
+		return (1);
+	}
+	else
+	{
+		while (start != end)
+		{
+			if (start->next->val > start->val)
+				return (0);
+			start = start->next;
+		}
+		return (1);
+	}
+}
 
 int	print_error_ret1(void)
 {

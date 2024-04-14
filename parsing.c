@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 21:45:57 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 22:19:01 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 22:28:28 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	add_one(char *s, t_node **head, t_node **tail, int *flag)
 
 int	split_space_b(char *s, t_stack *stack, int *f)
 {
-	int		i;
+	int	i;
 
 	i = 0;
 	while (s[i] != '\0')

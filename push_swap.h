@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:35:35 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 22:02:33 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 22:34:47 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,6 @@ typedef struct s_stack
 	t_node	*b_tail;
 }	t_stack;
 
-typedef enum e_case
-{
-	rr_rab = 0,
-	rrr_rrab = 1,
-	ra_rrb = 2,
-	rra_rb = 3
-}	t_case;
-
-
 typedef struct s_param
 {
 	long	*a_pa;
@@ -52,7 +43,6 @@ typedef struct s_param
 	long	min_val;
 	t_node	*cal_temp;
 }	t_param;
-
 
 int			node_pb(t_node **head, t_node **tail, int val);
 void		lstclear(t_node **lst);
@@ -75,7 +65,6 @@ int			rrr(t_stack *stack);
 long long	ps_atoll(const char *str);
 int			parsing(int argc, char *argv[], t_stack *stack);
 
-t_node		*at(t_node *list, int idx);
 int			is_sorted(t_node *start, t_node *end, int is_ascending);
 
 long		*stack_to_int_array(t_stack *stack);

@@ -21,9 +21,8 @@ SRCS	= ./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
 			node_swap.c node_push.c \
 			node_rotate.c node_reverse_rotate.c \
 			parsing.c ps_atoll.c\
-			sort_list.c sort_utils.c \
 			stack_to_int_array.c 3_sort.c \
-			pb_quick_sort.c split_3.c lis.c \
+			ps_quick_sort.c split_3.c lis.c \
 			greedy_main.c greedy_do_oper.c greedy_utils.c greedy_cal_a_pre_pa.c\
 			final_stage.c \
 			main.c
