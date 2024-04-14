@@ -6,21 +6,19 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:38:43 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 17:10:09 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 18:01:20 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
-
-void	last_ra_or_rra(t_stack *stack, int min_val, int min_val_idx)
+void	last_ra_or_rra(t_stack *stack, int min_val_idx)
 {
 	int	ra_oper;
 	int	rra_oper;
 
 	ra_oper = min_val_idx;
 	rra_oper = stack->size - min_val_idx;
-	// printf("ra oper : %d\n rra_oper : %d\n", ra_oper, rra_oper);
 	if (ra_oper < rra_oper)
 	{
 		while (ra_oper-- > 0)
@@ -55,6 +53,5 @@ void	final_stage(t_stack *stack)
 		temp = temp->next;
 		i++;
 	}
-	// printf("min val %ld, at : %ld idx", min_val, min_val_idx);
-	last_ra_or_rra(stack, min_val, min_val_idx);
+	last_ra_or_rra(stack, min_val_idx);
 }

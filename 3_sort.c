@@ -6,11 +6,11 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 11:00:41 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 16:34:10 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 17:22:55 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	sort_3(t_stack *stack)
 {

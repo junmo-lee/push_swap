@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:35:35 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 16:51:39 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 17:43:07 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include "libft/libft.h"
 # include "gnl/get_next_line.h"
-
-# include <stdio.h>
 
 typedef struct s_node
 {
@@ -52,6 +50,7 @@ typedef struct s_param
 	long	ways;
 	long	min_idx;
 	long	min_val;
+	t_node	*cal_temp;
 }	t_param;
 
 
@@ -92,10 +91,13 @@ void		split_3(t_stack *stack, long *arr_lis, long *del_dup);
 void		greedy_main(t_stack *stack);
 void		do_best_oper(t_stack *stack, t_param *param);
 
+void		param_init(t_stack *stack, t_param *param);
+long		find_close(long b_size, long idx);
 long		max_l2(long a, long b);
 long		min_l2(long a, long b);
 long		abs_l(long a);
 
+long		cal_a_pre_pa(t_stack *stack, t_param *param, long b_val);
 void		final_stage(t_stack *stack);
 
 #endif

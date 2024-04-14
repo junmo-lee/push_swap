@@ -6,13 +6,12 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 11:15:28 by junmlee           #+#    #+#             */
-/*   Updated: 2024/03/11 22:04:50 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 18:02:50 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap_bonus.h"
 
-// s가 처음 나왔을때 : sa sb ss
 int	swap_oper(t_stack *stack, char *str)
 {
 	if (str[2] != '\n' || str[3] != '\0')
@@ -70,10 +69,6 @@ int	rotate_oper(t_stack *stack, char *str)
 	return (5);
 }
 
-
-// stdin에서 한 줄 읽어서 맞는 함수를 실행
-// ret : EOF 도달 or 읽기오류시 1, 성공시 0
-// ex) while(!get_oper(&stack)) 
 int	get_oper(t_stack *stack, char *str)
 {
 	if (str == NULL)

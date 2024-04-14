@@ -6,11 +6,11 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:15:22 by junmlee           #+#    #+#             */
-/*   Updated: 2024/03/11 18:26:24 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 17:34:38 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 long	*stack_to_int_array(t_stack *stack)
 {

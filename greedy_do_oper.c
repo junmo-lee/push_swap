@@ -6,11 +6,11 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 08:25:38 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 16:36:50 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 17:22:55 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	do_rr_rab(t_stack *stack, t_param *param)
 {

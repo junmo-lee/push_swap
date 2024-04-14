@@ -17,23 +17,23 @@ INC		= push_swap.h
 INC_B	= push_swap_bonus.h
 
 SRCS	= ./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
-			./node/lstclear.c ./node/push_back.c \
-			./node/node_swap.c ./node/node_push.c \
-			./node/node_rotate.c ./node/node_reverse_rotate.c \
-			./parsing/parsing.c ./parsing/ps_atoll.c\
-			./sorting/sort_list.c ./sorting/sort_utils.c \
-			./sorting/stack_to_int_array.c ./sorting/3_sort.c \
-			./sorting/pb_quick_sort.c ./sorting/split_3.c \
-			./lis/lis.c ./greedy/greedy_main.c ./greedy/greedy_do_oper.c \
-			./greedy/final_stage.c \
+			lstclear.c push_back.c \
+			node_swap.c node_push.c \
+			node_rotate.c node_reverse_rotate.c \
+			parsing.c ps_atoll.c\
+			sort_list.c sort_utils.c \
+			stack_to_int_array.c 3_sort.c \
+			pb_quick_sort.c split_3.c lis.c \
+			greedy_main.c greedy_do_oper.c greedy_utils.c greedy_cal_a_pre_pa.c\
+			final_stage.c \
 			main.c
 		
-SRCS_B	= ./gnl/get_next_line_bonus.c ./gnl/get_next_line_utils_bonus.c \
-			./node/lstclear_bonus.c ./node/push_back_bonus.c \
-			./node/node_swap_bonus.c ./node/node_push_bonus.c \
-			./node/node_rotate_bonus.c ./node/node_reverse_rotate_bonus.c \
-			./parsing/parsing_bonus.c ./parsing/ps_atoll_bonus.c \
-			./parsing/input_oper_bonus.c \
+SRCS_B	= get_next_line_bonus.c get_next_line_utils_bonus.c \
+			lstclear_bonus.c push_back_bonus.c \
+			node_swap_bonus.c node_push_bonus.c \
+			node_rotate_bonus.c node_reverse_rotate_bonus.c \
+			parsing_bonus.c ps_atoll_bonus.c \
+			input_oper_bonus.c \
 			main_bonus.c
 
 OBJS	= $(SRCS:.c=.o)

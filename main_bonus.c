@@ -6,11 +6,11 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 15:54:11 by junmlee           #+#    #+#             */
-/*   Updated: 2024/03/03 15:46:07 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 17:28:34 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap_bonus.h"
+#include "push_swap_bonus.h"
 
 int	print_error_ret1(void)
 {
@@ -38,16 +38,17 @@ int	is_a_sorted(t_stack stack)
 	return (0);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	t_stack stack;
+	t_stack	stack;
+	int		flag;
 
+	flag = 0;
 	ft_memset(&stack, 0, sizeof(t_stack));
 	if (argc == 1)
 		return (0);
 	if (parsing(argc, argv, &stack) == 1)
 		return (print_error_ret1());
-	int flag = 0;
 	while (flag != 10)
 	{
 		flag = get_oper(&stack);

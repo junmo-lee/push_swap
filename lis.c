@@ -6,11 +6,11 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 02:24:18 by junmlee           #+#    #+#             */
-/*   Updated: 2024/03/10 22:17:41 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 17:22:55 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 long	lower_bound(long *arr, int size, long target)
 {

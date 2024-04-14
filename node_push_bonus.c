@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 21:09:11 by junmlee           #+#    #+#             */
-/*   Updated: 2024/03/01 18:47:21 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 17:31:56 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,3 @@ int	pa_b(t_stack *stack)
 	stack->a_head->prev = NULL;
 	return (0);
 }
-
