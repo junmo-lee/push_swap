@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:20:41 by junmlee           #+#    #+#             */
-/*   Updated: 2024/03/20 02:42:03 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 16:34:36 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	split_stack(t_stack *stack, long *arr_lis, long lis_len, long a)
 		if (is_in_long_arr(arr_lis, temp->val))
 		{
 			if (i != lis_len || temp->val != arr_lis[0])
-				ra(stack);
+				ra(stack, 1);
 			i++;
 		}
 		else if (temp->val <= a)
@@ -43,7 +43,7 @@ void	split_stack(t_stack *stack, long *arr_lis, long lis_len, long a)
 		else
 		{
 			pb(stack);
-			rb(stack);
+			rb(stack, 1);
 		}
 		temp = temp_next;
 	}

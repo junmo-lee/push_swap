@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:35:35 by junmlee           #+#    #+#             */
-/*   Updated: 2024/03/20 08:33:45 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 16:51:39 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include "libft/libft.h"
 # include "gnl/get_next_line.h"
+
+# include <stdio.h>
 
 typedef struct s_node
 {
@@ -47,7 +49,7 @@ typedef struct s_param
 	long	a_size;
 	long	*b_pa;
 	long	b_size;
-	long	ways[4];
+	long	ways;
 	long	min_idx;
 	long	min_val;
 }	t_param;
@@ -63,12 +65,12 @@ int			ss(t_stack *stack);
 int			pa(t_stack *stack);
 int			pb(t_stack *stack);
 
-int			ra(t_stack *stack);
-int			rb(t_stack *stack);
+int			ra(t_stack *stack, int do_print);
+int			rb(t_stack *stack, int do_print);
 int			rr(t_stack *stack);
 
-int			rra(t_stack *stack);
-int			rrb(t_stack *stack);
+int			rra(t_stack *stack, int do_print);
+int			rrb(t_stack *stack, int do_print);
 int			rrr(t_stack *stack);
 
 long long	ps_atoll(const char *str);
@@ -89,5 +91,11 @@ void		pb_quick_sort(long *data, long start, long end);
 void		split_3(t_stack *stack, long *arr_lis, long *del_dup);
 void		greedy_main(t_stack *stack);
 void		do_best_oper(t_stack *stack, t_param *param);
+
+long		max_l2(long a, long b);
+long		min_l2(long a, long b);
+long		abs_l(long a);
+
+void		final_stage(t_stack *stack);
 
 #endif

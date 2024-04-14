@@ -24,7 +24,8 @@ SRCS	= ./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
 			./sorting/sort_list.c ./sorting/sort_utils.c \
 			./sorting/stack_to_int_array.c ./sorting/3_sort.c \
 			./sorting/pb_quick_sort.c ./sorting/split_3.c \
-			./lis/lis.c ./greedy/greedy_main.c /greedy/greedy_do_oper.c \
+			./lis/lis.c ./greedy/greedy_main.c ./greedy/greedy_do_oper.c \
+			./greedy/final_stage.c \
 			main.c
 		
 SRCS_B	= ./gnl/get_next_line_bonus.c ./gnl/get_next_line_utils_bonus.c \

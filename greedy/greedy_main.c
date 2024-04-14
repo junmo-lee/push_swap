@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:27:22 by junmlee           #+#    #+#             */
-/*   Updated: 2024/03/20 08:40:28 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 16:58:55 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ long	cal_a_pre_pa(t_stack *stack, t_param *param, long b_val)
 	i = 0;
 	//위쪽 먼저 확인
 	temp = stack->a_head;
+	// if (b_val < temp->val)
+	// 	return (0); // 맨 위에 올라가는 경우
 	while (temp->next != NULL)
 	{
 		temp_next = temp->next;
@@ -100,7 +102,7 @@ long	cal_a_pre_pa(t_stack *stack, t_param *param, long b_val)
 		i++;
 		temp = temp_next;
 	}
-	return (0); // 위의 케이스에 다 해당되지 않으면 맨위밖에 없음
+	return (0); // 위의 케이스에 다 해당되지 않으면 맨위(맨아래도 -1 후 rra 이므로)
 }
 
 void	find_min_case(t_param *param, long len)
@@ -111,37 +113,25 @@ void	find_min_case(t_param *param, long len)
 	param->min_val = LONG_MAX;
 	while (i != len)
 	{
-		param->ways[rr_rab] = max_l2(param->a_pa[i], param->b_pa[i]);
-		param->ways[rrr_rrab] = abs_l(min_l2(param->a_pa[i], param->b_pa[i]));
-		param->ways[ra_rrb] = param->a_pa[i] + abs_l(param->b_pa[i]);
-		param->ways[rra_rb] = abs_l(param->a_pa[i]) + param->b_pa[i];
-		pb_quick_sort(param->ways, 0, 3);
-		if (param->ways[0] < parma->min_val)
+		if (param->a_pa[i] >= 0 && param->b_pa[i] >= 0)
+			param->ways = max_l2(param->a_pa[i], param->b_pa[i]);
+		else if (param->a_pa[i] <= 0 && param->b_pa[i] <= 0)
+			param->ways = abs_l(min_l2(param->a_pa[i], param->b_pa[i]));
+		else if (param->a_pa[i] >= 0 && param->b_pa[i] <= 0)
+			param->ways = param->a_pa[i] + abs_l(param->b_pa[i]);
+		else if (param->a_pa[i] <= 0 && param->b_pa[i] >= 0)
+			param->ways = abs_l(param->a_pa[i]) + param->b_pa[i];
+		// param->ways[rrr_rrab] = ;
+		// param->ways[ra_rrb] = ;
+		// param->ways[rra_rb] = abs_l(param->a_pa[i]) + param->b_pa[i];
+		// pb_quick_sort(param->ways, 0, 3);
+		if (param->ways < param->min_val)
 		{
 			param->min_idx = i;
-			param->min_val = param->ways[0];
+			param->min_val = param->ways;
 		}
 		i++;
 	}
-}
-
-void	do_best_oper(t_stack *stack, t_param *param)
-{
-	long	i;
-
-	i = param->min_idx;
-	param->ways[rr_rab] = max_l2(param->a_pa[i], param->b_pa[i]);
-	param->ways[rrr_rrab] = abs_l(min_l2(param->a_pa[i], param->b_pa[i]));
-	param->ways[ra_rrb] = param->a_pa[i] + abs_l(param->b_pa[i]);
-	param->ways[rra_rb] = abs_l(param->a_pa[i]) + param->b_pa[i];
-	if (param->ways[rr_rab] == parma->min_val)
-		do_rr_rrab(stack, param);
-	else if (param->ways[rrr_rrab] == parma->min_val)
-		do_rrr_rab(stack, param);
-	else if (param->ways[ra_rrb] == parma->min_val)
-		do_ra_rrb(stack, param);
-	else if (param->ways[rra_rb] == parma->min_val)
-		do_rra_rrb(stack, param);
 }
 
 void	greedy_main(t_stack *stack)
@@ -162,9 +152,10 @@ void	greedy_main(t_stack *stack)
 		i++;
 		temp = temp->next;
 	}
+	//printf("b len : %ld\n", i);
 	find_min_case(&param, i);
+	//printf("min idx : %ld do_best_oper\n", param.min_idx);
 	do_best_oper(stack, &param);
-	pa(stack);
 	free(param.a_pa);
 	free(param.b_pa);
 }
