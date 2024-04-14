@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 15:54:11 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 17:28:34 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 20:54:15 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	print_error_ret1(void)
 {
-	write(STDERR_FILENO, "Error\n", 6);
+	write(STDOUT_FILENO, "Error\n", 6);
 	return (1);
 }
 
@@ -42,6 +42,7 @@ int	main(int argc, char *argv[])
 {
 	t_stack	stack;
 	int		flag;
+	char	*input;
 
 	flag = 0;
 	ft_memset(&stack, 0, sizeof(t_stack));
@@ -51,7 +52,12 @@ int	main(int argc, char *argv[])
 		return (print_error_ret1());
 	while (flag != 10)
 	{
-		flag = get_oper(&stack);
+		input = get_next_line(STDIN_FILENO);
+		if (input == NULL)
+			break ;
+		flag = get_oper(&stack, input);
+		ft_memset(input, 0, ft_strlen(input));
+		free(input);
 		if (flag == 5)
 			return (print_error_ret1());
 	}

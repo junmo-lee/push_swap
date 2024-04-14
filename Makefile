@@ -28,7 +28,7 @@ SRCS	= ./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
 			final_stage.c \
 			main.c
 		
-SRCS_B	= get_next_line_bonus.c get_next_line_utils_bonus.c \
+SRCS_B	= ./gnl/get_next_line_bonus.c ./gnl/get_next_line_utils_bonus.c \
 			lstclear_bonus.c push_back_bonus.c \
 			node_swap_bonus.c node_push_bonus.c \
 			node_rotate_bonus.c node_reverse_rotate_bonus.c \

@@ -6,11 +6,11 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 21:45:57 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 17:30:49 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 20:43:18 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap_bonus.h"
+#include "push_swap_bonus.h"
 
 int	add_one(char *s, t_node **head, t_node **tail)
 {

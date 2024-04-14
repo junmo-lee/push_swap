@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap_bonus.h"
+#include "push_swap_bonus.h"
 
 long long	ps_atoll(const char *str)
 {

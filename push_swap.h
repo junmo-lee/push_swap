@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:35:35 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 17:43:07 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 22:02:33 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ long		*make_lis(long *arr, long *dp, long *temp, int size);
 
 void		ft_memset_long(long *arr, long val, int len);
 
-void		simple_sort(t_stack *stack);
+int			simple_sort(t_stack *stack);
 void		pb_quick_sort(long *data, long start, long end);
 void		split_3(t_stack *stack, long *arr_lis, long *del_dup);
 void		greedy_main(t_stack *stack);

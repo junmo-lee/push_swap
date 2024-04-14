@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 11:00:41 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 17:22:55 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 21:10:17 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	sort_3(t_stack *stack)
 
 	first = stack->a_head->val;
 	second = stack->a_head->next->val;
-	third = stack->a_head->next->val;
+	third = stack->a_head->next->next->val;
 	if (first > second && second > third && first > third)
 	{
 		sa(stack);
@@ -45,12 +45,20 @@ void	sort_2(t_stack *stack)
 		sa(stack);
 }
 
-void	simple_sort(t_stack *stack)
+int	simple_sort(t_stack *stack)
 {
 	if (stack->size == 3)
+	{
 		sort_3(stack);
+		return (1);
+	}
 	else if (stack->size == 2)
+	{
 		sort_2(stack);
+		return (1);
+	}
+	else if (stack->size == 1)
+		return (1);
 	else
-		return ;
+		return (0);
 }

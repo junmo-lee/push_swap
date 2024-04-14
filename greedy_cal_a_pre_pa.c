@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 17:38:00 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 18:01:29 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 22:05:59 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ long	cal_a_pre_pa_1(t_param *param, t_node *temp, long b_val, long *i)
 		(*i)++;
 		temp = temp_next;
 	}
+	if (temp_next == NULL)
+		return (1);
 	if (b_val > temp->val || temp_next->val > b_val)
 		return (find_close(param->a_size, (*i) + 1));
 	else

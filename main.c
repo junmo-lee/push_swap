@@ -6,15 +6,16 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 15:54:55 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 17:51:31 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 22:02:50 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 int	print_error_ret1(void)
 {
-	write(STDOUT_FILENO, "Error\n", 7);
+	write(STDERR_FILENO, "Error\n", 6);
 	return (1);
 }
 
@@ -67,6 +68,10 @@ int	main(int argc, char *argv[])
 		return (0);
 	if (parsing(argc, argv, &stack) == 1)
 		return (print_error_ret1());
+	if (is_sorted(stack.a_head, stack.a_tail, 1) == 1)
+		return (0);
+	if (simple_sort(&stack) == 1)
+		return (0);
 	arr_lis = do_lis(&stack);
 	del_dup = stack_to_int_array_del_dup(&stack, arr_lis);
 	pb_quick_sort(del_dup, 0, get_lis_len(del_dup) - 1);

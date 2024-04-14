@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:38:43 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 18:01:20 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 21:49:04 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	final_stage(t_stack *stack)
 	temp = stack->a_head;
 	min_val = LONG_MAX;
 	i = 0;
-	while (temp->next != NULL)
+	while (temp != NULL)
 	{
 		if (temp->val < min_val)
 		{
