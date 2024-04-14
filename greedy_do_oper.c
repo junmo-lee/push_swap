@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 08:25:38 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 17:22:55 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/14 18:03:41 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,10 +105,6 @@ void	do_best_oper(t_stack *stack, t_param *param)
 	long	i;
 
 	i = param->min_idx;
-	// param->ways[rr_rab] = max_l2(param->a_pa[i], param->b_pa[i]);
-	// param->ways[rrr_rrab] = abs_l(min_l2(param->a_pa[i], param->b_pa[i]));
-	// param->ways[ra_rrb] = param->a_pa[i] + abs_l(param->b_pa[i]);
-	// param->ways[rra_rb] = abs_l(param->a_pa[i]) + param->b_pa[i];
 	if (param->a_pa[i] >= 0 && param->b_pa[i] >= 0)
 		do_rr_rab(stack, param);
 	else if (param->a_pa[i] <= 0 && param->b_pa[i] <= 0)
@@ -117,13 +113,5 @@ void	do_best_oper(t_stack *stack, t_param *param)
 		do_ra_rrb(stack, param);
 	else if (param->a_pa[i] <= 0 && param->b_pa[i] >= 0)
 		do_rra_rb(stack, param);
-	// if (param->ways[rr_rab] == param->min_val)
-	// 	do_rr_rab(stack, param);
-	// else if (param->ways[rrr_rrab] == param->min_val)
-	// 	do_rrr_rrab(stack, param);
-	// else if (param->ways[ra_rrb] == param->min_val)
-	// 	do_ra_rrb(stack, param);
-	// else if (param->ways[rra_rb] == param->min_val)
-	// 	do_rra_rb(stack, param);
 	pa(stack);
 }
