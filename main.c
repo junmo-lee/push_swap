@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 15:54:55 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 22:32:07 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/15 11:44:56 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,9 @@ int	main(int argc, char *argv[])
 		return (0);
 	if (parsing(argc, argv, &stack) == 1)
 		return (print_error_ret1());
+	if (simple_sort(&stack) == 2)
+		return (print_error_ret1());
 	if (is_sorted(stack.a_head, stack.a_tail, 1) == 1)
-		return (0);
-	if (simple_sort(&stack) == 1)
 		return (0);
 	arr_lis = do_lis(&stack);
 	del_dup = stack_to_int_array_del_dup(&stack, arr_lis);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:35:35 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 22:34:47 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/15 11:10:51 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ long		*make_lis(long *arr, long *dp, long *temp, int size);
 void		ft_memset_long(long *arr, long val, int len);
 
 int			simple_sort(t_stack *stack);
+void		sort_5(t_stack *stack, long *a, long *sa);
+void		sort_4(t_stack *stack, long *a, long *sa);
 void		pb_quick_sort(long *data, long start, long end);
 void		split_3(t_stack *stack, long *arr_lis, long *del_dup);
 void		greedy_main(t_stack *stack);
