@@ -12,3 +12,5 @@ checker_Mac
 .DS_Store
 push_swap
 checker
+.gitignore
+.vscode/

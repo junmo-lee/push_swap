@@ -6,25 +6,25 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:15:22 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 17:34:38 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/15 14:48:08 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	*stack_to_int_array(t_stack *stack)
+long	*stack_to_int_array(t_stack *stack, long size)
 {
 	long	*arr;
 	t_node	*temp;
 	long	i;
 
-	arr = (long *)malloc((stack->size + 1) * sizeof(long));
+	arr = (long *)malloc((size + 1) * sizeof(long));
 	if (arr == NULL)
 		return (NULL);
-	ft_memset_long(arr, LONG_MIN, stack->size + 1);
+	ft_memset_long(arr, LONG_MIN, size + 1);
 	i = 0;
 	temp = stack->a_head;
-	while (i < stack->size)
+	while (i < size)
 	{
 		arr[i++] = temp->val;
 		temp = temp->next;

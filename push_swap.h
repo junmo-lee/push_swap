@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:35:35 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/15 11:10:51 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/15 15:46:38 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int			parsing(int argc, char *argv[], t_stack *stack);
 
 int			is_sorted(t_node *start, t_node *end, int is_ascending);
 
-long		*stack_to_int_array(t_stack *stack);
+long		*stack_to_int_array(t_stack *stack, long size);
 long		*stack_to_int_array_del_dup(t_stack *stack, long *ans);
 int			get_lis_len(long *temp);
 long		*make_lis(long *arr, long *dp, long *temp, int size);
@@ -75,8 +75,10 @@ long		*make_lis(long *arr, long *dp, long *temp, int size);
 void		ft_memset_long(long *arr, long val, int len);
 
 int			simple_sort(t_stack *stack);
-void		sort_5(t_stack *stack, long *a, long *sa);
-void		sort_4(t_stack *stack, long *a, long *sa);
+long		find_min(long *a, long size);
+int			sort_5(t_stack *stack, long *a, long max_val);
+int			sort_4(t_stack *stack, long *a, long max_val);
+int			sort_3(t_stack *stack, long *a);
 void		pb_quick_sort(long *data, long start, long end);
 void		split_3(t_stack *stack, long *arr_lis, long *del_dup);
 void		greedy_main(t_stack *stack);

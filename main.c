@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 15:54:55 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/15 11:44:56 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/15 14:48:36 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	is_sorted(t_node *start, t_node *end, int is_ascending)
 {
@@ -63,7 +62,7 @@ long	*do_lis(t_stack *stack)
 	long	*dp;
 	long	*temp;
 
-	arr = stack_to_int_array(stack);
+	arr = stack_to_int_array(stack, stack->size);
 	if (arr == NULL)
 		return (NULL);
 	dp = malloc((stack->size + 1) * sizeof(long));
