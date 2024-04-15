@@ -7,7 +7,7 @@ DEBUG_NAME = debug.out
 DEBUG_NAME_B = debug_bonus.out
 
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g3
 CDEF	= -MMD -MP
 
 LIBFT = ./libft/libft.a
@@ -24,7 +24,7 @@ SRCS	= ./gnl/get_next_line.c ./gnl/get_next_line_utils.c \
 			stack_to_int_array.c 3_sort.c 4_sort.c 5_sort.c \
 			ps_quick_sort.c split_3.c lis.c \
 			greedy_main.c greedy_do_oper.c greedy_utils.c greedy_cal_a_pre_pa.c\
-			final_stage.c \
+			final_stage.c main_utils.c \
 			main.c
 		
 SRCS_B	= ./gnl/get_next_line_bonus.c ./gnl/get_next_line_utils_bonus.c \
@@ -50,7 +50,7 @@ ifdef IGNORE_ERROR
 endif
 
 ifdef DEBUG_FLAG
-	CFLAGS += -g3 -fsanitize=address
+	CFLAGS += -Wall -Wextra -Werror -g3
 endif
 
 $(LIBFT) :

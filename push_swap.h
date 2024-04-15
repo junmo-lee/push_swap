@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:35:35 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/15 16:25:58 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/15 17:54:47 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ typedef struct s_param
 
 int			node_pb(t_node **head, t_node **tail, int val);
 void		lstclear(t_node **lst);
+int			clear_ret(t_stack *stack, long *arr_lis, long *del_dup, int ret);
+void		main_init(t_stack *stack, long **arr_lis, long **del_dup, int *ret);
 
 int			sa(t_stack *stack);
 int			sb(t_stack *stack);
