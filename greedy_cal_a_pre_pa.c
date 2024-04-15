@@ -6,14 +6,11 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 17:38:00 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 22:05:59 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/15 16:26:00 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-long	cal_a_pre_pa_1(t_param *param, t_node *temp, long b_val, long *i);
-long	cal_a_pre_pa_2(t_param *param, t_node *temp, long b_val, long *i);
 
 long	cal_a_pre_pa(t_stack *stack, t_param *param, long b_val)
 {

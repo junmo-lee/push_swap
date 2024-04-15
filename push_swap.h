@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:35:35 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/15 15:46:38 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/04/15 16:25:58 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ long		min_l2(long a, long b);
 long		abs_l(long a);
 
 long		cal_a_pre_pa(t_stack *stack, t_param *param, long b_val);
+long		cal_a_pre_pa_1(t_param *param, t_node *temp, long b_val, long *i);
+long		cal_a_pre_pa_2(t_param *param, t_node *temp, long b_val, long *i);
 void		final_stage(t_stack *stack);
 
 #endif
