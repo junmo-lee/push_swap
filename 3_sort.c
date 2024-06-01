@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 11:00:41 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/15 15:46:54 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/01 16:41:26 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,16 @@ int	sort_2(t_stack *stack)
 int	simple_sort(t_stack *stack)
 {
 	long	*arr;
-	long	max_val;
 
-	max_val = LONG_MIN;
 	arr = NULL;
 	if (stack->size > 5)
 		return (0);
 	if (is_sorted(stack->a_head, stack->a_tail, 1) == 1)
 		return (1);
 	if (stack->size == 5)
-		return (sort_5(stack, arr, max_val));
+		return (sort_5(stack, arr, 0));
 	else if (stack->size == 4)
-		return (sort_4(stack, arr, max_val));
+		return (sort_4(stack, arr, 0));
 	else if (stack->size == 3)
 		return (sort_3(stack, arr));
 	else if (stack->size == 2)
