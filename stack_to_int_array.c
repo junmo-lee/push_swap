@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:15:22 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/15 14:48:08 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/01 22:05:00 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ long	*stack_to_int_array(t_stack *stack, long size)
 	return (arr);
 }
 
-long	*stack_to_int_array_del_dup(t_stack *stack, long *ans)
+long	*del_duplication(t_stack *stack, long *ans)
 {
 	long	*arr;
 	t_node	*temp;

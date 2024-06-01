@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:27:22 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 17:38:43 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/01 22:10:55 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,15 @@ void	greedy_main(t_stack *stack)
 	do_best_oper(stack, &param);
 	free(param.a_pa);
 	free(param.b_pa);
+}
+
+void	do_sorting(t_stack *stack, long *arr_lis, long *arr_stackb)
+{
+	arr_lis = do_lis(stack);
+	arr_stackb = del_duplication(stack, arr_lis);
+	pb_quick_sort(arr_stackb, 0, get_lis_len(arr_stackb) - 1);
+	split_3(stack, arr_lis, arr_stackb);
+	while (stack->b_head != NULL)
+		greedy_main(stack);
+	final_stage(stack);
 }

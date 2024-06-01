@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 21:57:53 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 17:22:55 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/01 21:50:17 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	rra(t_stack *stack, int do_print)
 	temp->prev = NULL;
 	stack->a_head = temp;
 	if (do_print)
-		write(1, "rra\n", 4);
+		write(STDOUT_FILENO, "rra\n", 4);
 	return (0);
 }
 
@@ -44,12 +44,12 @@ int	rrb(t_stack *stack, int do_print)
 	temp->prev = NULL;
 	stack->b_head = temp;
 	if (do_print)
-		write(1, "rrb\n", 4);
+		write(STDOUT_FILENO, "rrb\n", 4);
 	return (0);
 }
 
 int	rrr(t_stack *stack)
 {
-	write(1, "rrr\n", 4);
+	write(STDOUT_FILENO, "rrr\n", 4);
 	return (rra(stack, 0) + rrb(stack, 0));
 }

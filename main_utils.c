@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 17:55:27 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/15 17:56:33 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/01 21:42:38 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,28 +33,15 @@ void	ft_memset_long(long *arr, long val, int len)
 	}
 }
 
-int	is_sorted(t_node *start, t_node *end, int is_ascending)
+int	is_sorted(t_node *start, t_node *end)
 {
-	if (is_ascending == 1)
+	while (start != end)
 	{
-		while (start != end)
-		{
-			if (start->next->val < start->val)
-				return (0);
-			start = start->next;
-		}
-		return (1);
+		if (start->next->val < start->val)
+			return (0);
+		start = start->next;
 	}
-	else
-	{
-		while (start != end)
-		{
-			if (start->next->val > start->val)
-				return (0);
-			start = start->next;
-		}
-		return (1);
-	}
+	return (1);
 }
 
 int	clear_ret(t_stack *stack, long *arr_lis, long *del_dup, int ret)

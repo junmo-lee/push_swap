@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 21:09:11 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 17:22:55 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/01 21:52:20 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	pb(t_stack *stack)
 		stack->b_head->prev = temp;
 	stack->b_head = temp;
 	stack->b_head->prev = NULL;
-	write(1, "pb\n", 3);
+	write(STDOUT_FILENO, "pb\n", 3);
 	return (0);
 }
 
@@ -54,6 +54,6 @@ int	pa(t_stack *stack)
 		stack->a_head->prev = temp;
 	stack->a_head = temp;
 	stack->a_head->prev = NULL;
-	write(1, "pa\n", 3);
+	write(STDOUT_FILENO, "pa\n", 3);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 15:56:02 by junmlee           #+#    #+#             */
-/*   Updated: 2024/06/01 16:46:36 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/01 21:52:14 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int			rrr_b(t_stack *stack);
 long long	ps_atoll(const char *str);
 int			add_one(char *s, t_node **head, t_node **tail, int *flag);
 int			split_space_b(char *s, t_stack *stack, int *flag);
-int			parsing(int argc, char *argv[], t_stack *stack);
+int			parse(int argc, char *argv[], t_stack *stack);
 int			get_oper(t_stack *stack, char *input);
-
+int			is_sorted(t_node *start, t_node *end);
 #endif

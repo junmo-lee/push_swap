@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 16:38:43 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 21:49:04 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/01 22:06:23 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	final_stage(t_stack *stack)
 	long	i;
 	long	min_val_idx;
 
-	if (is_sorted(stack->a_head, stack->a_tail, 1))
+	if (is_sorted(stack->a_head, stack->a_tail))
 		return ;
 	temp = stack->a_head;
 	min_val = LONG_MAX;

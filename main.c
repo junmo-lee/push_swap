@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 15:54:55 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/15 17:58:35 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/01 22:10:34 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,25 +47,17 @@ int	main(int argc, char *argv[])
 {
 	t_stack	stack;
 	long	*arr_lis;
-	long	*del_dup;
+	long	*arr_stackb;
 	int		ret;
 
-	main_init(&stack, &arr_lis, &del_dup, &ret);
-	if (parsing(argc, argv, &stack) == 1)
+	main_init(&stack, &arr_lis, &arr_stackb, &ret);
+	if (parse(argc, argv, &stack) == 1)
 		ret = print_error_ret1();
 	else if (simple_sort(&stack) == 2)
 		ret = print_error_ret1();
-	else if (is_sorted(stack.a_head, stack.a_tail, 1) == 1)
+	else if (is_sorted(stack.a_head, stack.a_tail) == 1)
 		ret = 0;
 	else
-	{
-		arr_lis = do_lis(&stack);
-		del_dup = stack_to_int_array_del_dup(&stack, arr_lis);
-		pb_quick_sort(del_dup, 0, get_lis_len(del_dup) - 1);
-		split_3(&stack, arr_lis, del_dup);
-		while (stack.b_head != NULL)
-			greedy_main(&stack);
-		final_stage(&stack);
-	}
-	return (clear_ret(&stack, arr_lis, del_dup, ret));
+		do_sorting(&stack, arr_lis, arr_stackb);
+	return (clear_ret(&stack, arr_lis, arr_stackb, ret));
 }
