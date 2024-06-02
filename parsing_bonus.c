@@ -6,11 +6,25 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 21:45:57 by junmlee           #+#    #+#             */
-/*   Updated: 2024/06/02 14:57:09 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/02 21:12:07 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
+
+int	is_duplicate(t_node **head, long target)
+{
+	t_node	*temp;
+
+	temp = *head;
+	while (temp != NULL)
+	{
+		if (temp->val == target)
+			return (1);
+		temp = temp->next;
+	}
+	return (0);
+}
 
 int	add_one(char *s, t_node **head, t_node **tail)
 {
@@ -21,9 +35,12 @@ int	add_one(char *s, t_node **head, t_node **tail)
 	val = ps_atoll(s, &not_num);
 	if (not_num == 1 || val < INT_MIN || val > INT_MAX)
 		return (1);
+	else if (is_duplicate(head, val) == 1)
+		return (1);
 	else
 		return (node_pb(head, tail, (int)val));
 }
+
 
 int	split_space_b(char *s, t_stack *stack)
 {

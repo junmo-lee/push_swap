@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 21:45:57 by junmlee           #+#    #+#             */
-/*   Updated: 2024/06/02 19:03:23 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/02 21:06:57 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ int	is_duplicate(t_node **head, long target)
 	t_node	*temp;
 
 	temp = *head;
-	if (*head == NULL)
-		return (0);
-	while (temp->next != NULL)
+	while (temp != NULL)
 	{
 		if (temp->val == target)
 			return (1);

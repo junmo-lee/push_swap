@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 13:54:55 by junmlee           #+#    #+#             */
-/*   Updated: 2024/06/02 14:52:54 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/02 21:15:26 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ long long	ps_atoll(const char *str, int *not_num)
 	ret = 0;
 	while (*str != '\0' && *str == ' ')
 		str++;
-	if (*str == '-')
+	if (*str == '-' && ('0' <= *(str + 1) && *(str + 1) <= '9'))
 	{
 		sign = -1;
 		str++;
 	}
-	else if (*str == '+')
+	else if (*str == '+' && ('0' <= *(str + 1) && *(str + 1) <= '9'))
 		str++;
 	while (*str != '\0' && *str != ' ')
 	{

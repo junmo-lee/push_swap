@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 11:00:41 by junmlee           #+#    #+#             */
-/*   Updated: 2024/06/01 22:06:17 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/02 21:54:57 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int	sort_3(t_stack *stack, long *a)
 		rra(stack, 1);
 	else if (a[0] > a[1] && a[1] < a[2] && a[0] > a[2])
 		ra(stack, 1);
+	ft_memset_long(a, 0, 3);
+	free(a);
 	return (1);
 }
 
