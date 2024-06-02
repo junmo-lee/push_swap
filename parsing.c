@@ -6,36 +6,45 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 21:45:57 by junmlee           #+#    #+#             */
-/*   Updated: 2024/06/01 21:48:25 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/02 19:03:23 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	add_one(char *s, t_node **head, t_node **tail, int *flag)
+int	is_duplicate(t_node **head, long target)
 {
-	long long	val;
-	t_node		*temp;
+	t_node	*temp;
 
-	if (s[0] == '0' && (s[1] == '\0' || s[1] == ' ') && *flag == 1)
-	{
-		*flag = 0;
-		return (node_pb(head, tail, 0));
-	}
-	val = ps_atoll(s);
-	if (val == 0 || val < INT_MIN || val > INT_MAX)
-		return (1);
 	temp = *head;
-	while (temp != NULL)
+	if (*head == NULL)
+		return (0);
+	while (temp->next != NULL)
 	{
-		if (temp->val == val)
+		if (temp->val == target)
 			return (1);
 		temp = temp->next;
 	}
-	return (node_pb(head, tail, (int)val));
+	return (0);
 }
 
-int	split_space_b(char *s, t_stack *stack, int *f)
+int	add_one(char *s, t_node **head, t_node **tail)
+{
+	long long	val;
+	int			not_num;
+
+	not_num = 0;
+	val = ps_atoll(s, &not_num);
+	if (not_num == 1 || val < INT_MIN || val > INT_MAX)
+		return (1);
+	else if (is_duplicate(head, val) == 1)
+		return (1);
+	else
+		return (node_pb(head, tail, (int)val));
+}
+
+
+int	split_space_b(char *s, t_stack *stack)
 {
 	int	i;
 
@@ -46,7 +55,7 @@ int	split_space_b(char *s, t_stack *stack, int *f)
 			i++;
 		else
 		{
-			if (add_one(s + i, &(stack->a_head), &(stack->a_tail), f) == 1)
+			if (add_one(s + i, &(stack->a_head), &(stack->a_tail)) == 1)
 				return (1);
 			stack->size += 1;
 			while (s[i] != '\0' && s[i] != ' ')
@@ -59,13 +68,11 @@ int	split_space_b(char *s, t_stack *stack, int *f)
 int	parse(int argc, char *argv[], t_stack *stack)
 {	
 	int	idx;
-	int	zero_flag;
 
-	zero_flag = 1;
 	idx = 1;
 	while (idx < argc)
 	{
-		if (split_space_b(argv[idx], stack, &zero_flag) == 1)
+		if (split_space_b(argv[idx], stack) == 1)
 		{
 			lstclear(&(stack->a_head));
 			return (1);

@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 15:54:55 by junmlee           #+#    #+#             */
-/*   Updated: 2024/06/01 22:10:34 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/02 19:01:13 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ int	main(int argc, char *argv[])
 	else if (is_sorted(stack.a_head, stack.a_tail) == 1)
 		ret = 0;
 	else
-		do_sorting(&stack, arr_lis, arr_stackb);
+		ret = do_sorting(&stack, arr_lis, arr_stackb);
 	return (clear_ret(&stack, arr_lis, arr_stackb, ret));
 }

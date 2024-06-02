@@ -12,7 +12,7 @@
 
 #include "push_swap_bonus.h"
 
-long long	ps_atoll(const char *str)
+long long	ps_atoll(const char *str, int *not_num)
 {
 	long long	ret;
 	int			sign;
@@ -31,7 +31,7 @@ long long	ps_atoll(const char *str)
 	while (*str != '\0' && *str != ' ')
 	{
 		if (*str < '0' || *str > '9')
-			sign = 0;
+			*not_num = 1;
 		ret *= 10;
 		ret += *str - '0';
 		str++;

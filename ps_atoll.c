@@ -6,13 +6,13 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 13:54:55 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 17:22:55 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/02 14:52:54 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long long	ps_atoll(const char *str)
+long long	ps_atoll(const char *str, int *not_num)
 {
 	long long	ret;
 	int			sign;
@@ -31,7 +31,7 @@ long long	ps_atoll(const char *str)
 	while (*str != '\0' && *str != ' ')
 	{
 		if (*str < '0' || *str > '9')
-			sign = 0;
+			*not_num = 1;
 		ret *= 10;
 		ret += *str - '0';
 		str++;

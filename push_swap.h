@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 16:35:35 by junmlee           #+#    #+#             */
-/*   Updated: 2024/06/01 22:11:17 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/02 18:05:29 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int			rra(t_stack *stack, int do_print);
 int			rrb(t_stack *stack, int do_print);
 int			rrr(t_stack *stack);
 
-long long	ps_atoll(const char *str);
+long long	ps_atoll(const char *str, int *num_len);
 int			parse(int argc, char *argv[], t_stack *stack);
 
 long		*do_lis(t_stack *stack);
@@ -83,10 +83,12 @@ int			sort_5(t_stack *stack, long *a, long max_val);
 int			sort_4(t_stack *stack, long *a, long max_val);
 int			sort_3(t_stack *stack, long *a);
 void		pb_quick_sort(long *data, long start, long end);
+
+int			is_in_long_arr(long *arr_lis, long target);
 void		split_3(t_stack *stack, long *arr_lis, long *arr_stackb);
 void		do_best_oper(t_stack *stack, t_param *param);
 void		greedy_main(t_stack *stack);
-void		do_sorting(t_stack *stack, long *arr_lis, long *arr_stackb);
+int			do_sorting(t_stack *stack, long *arr_lis, long *arr_stackb);
 
 void		param_init(t_stack *stack, t_param *param);
 long		find_close(long b_size, long idx);
