@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 17:38:00 by junmlee           #+#    #+#             */
-/*   Updated: 2024/06/02 15:56:33 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/02 20:53:50 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ long	cal_a_pre_pa_1(t_param *param, t_node *temp, long b_val, long *i)
 	t_node	*temp_next;
 
 	temp_next = temp->next;
-	while (temp_next != NULL)
+	while (temp->next != NULL)
 	{
+		temp_next = temp->next;
 		if (temp_next->val < temp->val)
 			break ;
 		if (temp->val < b_val && b_val < temp_next->val)
 			return (find_close(param->a_size, (*i) + 1));
 		(*i)++;
 		temp = temp_next;
-		temp_next = temp->next;
 	}
 	if (temp_next == NULL)
 		return (1);
@@ -50,16 +50,15 @@ long	cal_a_pre_pa_2(t_param *param, t_node *temp, long b_val, long *i)
 	t_node	*temp_next;
 
 	(*i)++;
-	temp_next = temp->next;
-	while (temp_next != NULL)
+	while (temp->next != NULL)
 	{
+		temp_next = temp->next;
 		if (temp_next->val < temp->val)
 			break ;
 		if (temp->val < b_val && b_val < temp_next->val)
 			return (find_close(param->a_size, (*i) + 1));
 		(*i)++;
 		temp = temp_next;
-		temp_next = temp->next;
 	}
 	return (0);
 }
