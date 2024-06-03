@@ -50,7 +50,7 @@ $(NAME): $(LIBFT) $(OBJS)
 	$(CC) $(CFLAGS) $(CDEF) $^ -o $(NAME) -I $(INC) -L ./libft -lft
 
 $(NAME_B): $(LIBFT) $(OBJS_B)
-	cp $(LIBFT) $(NAME)
+	cp $(LIBFT) $(NAME_B)
 	$(CC) $(CFLAGS) $(CDEF) $^ -o $(NAME_B) -I $(INC_B) -L ./libft -lft
 
 all : $(NAME)
