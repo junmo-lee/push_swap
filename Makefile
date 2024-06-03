@@ -3,12 +3,8 @@
 NAME	= push_swap
 NAME_B	= checker
 
-DEBUG_NAME = debug.out
-DEBUG_NAME_B = debug_bonus.out
-
 CC		= cc
-# CFLAGS	= -Wall -Wextra -Werror
-CFLAGS	= -Wall -Wextra -Werror -g
+CFLAGS	= -Wall -Wextra -Werror
 CDEF	= -MMD -MP
 
 LIBFT = ./libft/libft.a
@@ -39,10 +35,6 @@ SRCS_B	= ./gnl/get_next_line_bonus.c ./gnl/get_next_line_utils_bonus.c \
 OBJS	= $(SRCS:.c=.o)
 OBJS_B	= $(SRCS_B:.c=.o)
 
-DEBUG_O = $(filter-out main.o, $(OBJS)) debug.o
-DEBUG_B_O = $(filter-out main_bonus.o, $(OBJS_B)) debug_bonus.o
-
-
 DEF		= $(SRCS:.c=.d) 
 DEF_B	= $(SRCS_B:.c=.d)
 -include $(DEP) $(DEF_B)
@@ -60,14 +52,6 @@ $(NAME): $(LIBFT) $(OBJS)
 $(NAME_B): $(LIBFT) $(OBJS_B)
 	cp $(LIBFT) $(NAME)
 	$(CC) $(CFLAGS) $(CDEF) $^ -o $(NAME_B) -I $(INC_B) -L ./libft -lft
-
-$(DEBUG_NAME): $(LIBFT) $(DEBUG_O)
-	cp $(LIBFT) $(NAME)
-	$(CC) $(CFLAGS) $(CDEF) $^ -o $(DEBUG_NAME) -I $(INC) -L ./libft -lft
-
-$(DEBUG_NAME_B): $(LIBFT) $(DEBUG_B_O)
-	cp $(LIBFT) $(NAME)
-	$(CC) $(CFLAGS) $(CDEF) $^ -o $(DEBUG_NAME_B) -I $(INC_B) -L ./libft -lft
 
 all : $(NAME)
 
