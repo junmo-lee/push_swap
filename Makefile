@@ -46,10 +46,10 @@ $(LIBFT) :
 	$(CC) $(CFLAGS) $(CDEF) -c $< -o $@
 
 $(NAME): $(LIBFT) $(OBJS)
-	$(CC) $(CFLAGS) $(CDEF) $^ -o $(NAME) -I $(INC) -L ./libft -lft
+	$(CC) $(CFLAGS) $(CDEF) $^ -o $(NAME) -I $(INC) -L $(LIBFT_DIR) -lft
 
 $(NAME_B): $(LIBFT) $(OBJS_B)
-	$(CC) $(CFLAGS) $(CDEF) $^ -o $(NAME_B) -I $(INC_B) -L ./libft -lft
+	$(CC) $(CFLAGS) $(CDEF) $^ -o $(NAME_B) -I $(INC_B) -L$(LIBFT_DIR) -lft
 
 all : $(NAME)
 
