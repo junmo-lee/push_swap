@@ -46,11 +46,9 @@ $(LIBFT) :
 	$(CC) $(CFLAGS) $(CDEF) -c $< -o $@
 
 $(NAME): $(LIBFT) $(OBJS)
-	cp $(LIBFT) $(NAME)
 	$(CC) $(CFLAGS) $(CDEF) $^ -o $(NAME) -I $(INC) -L ./libft -lft
 
 $(NAME_B): $(LIBFT) $(OBJS_B)
-	cp $(LIBFT) $(NAME_B)
 	$(CC) $(CFLAGS) $(CDEF) $^ -o $(NAME_B) -I $(INC_B) -L ./libft -lft
 
 all : $(NAME)
