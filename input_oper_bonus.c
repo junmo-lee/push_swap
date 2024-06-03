@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 11:15:28 by junmlee           #+#    #+#             */
-/*   Updated: 2024/06/01 21:58:00 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/03 18:37:37 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	swap_oper(t_stack *stack, char *str)
 {
-	if (str[2] != '\n' || str[3] != '\0')
+	if (!(str[1] != '\0' && str[2] == '\n' && str[3] == '\0'))
 		return (1);
 	if (str[1] == 'a')
 		return (sa_b(stack));
@@ -28,7 +28,9 @@ int	swap_oper(t_stack *stack, char *str)
 
 int	push_oper(t_stack *stack, char *str)
 {
-	if (str[2] != '\n' || str[3] != '\0')
+	if (!(str[1] != '\0' && str[2] == '\n' && str[3] == '\0'))
+		return (1);
+	if (str[2] != '\n')
 		return (1);
 	if (str[1] == 'a')
 		return (pa_b(stack));
@@ -40,7 +42,7 @@ int	push_oper(t_stack *stack, char *str)
 
 int	reverse_rotate_oper(t_stack *stack, char *str)
 {
-	if (str[3] != '\n' || str[4] != '\0')
+	if (!(str[3] == '\n' && str[4] == '\0'))
 		return (1);
 	if (str[2] == 'a')
 		return (rra_b(stack));
@@ -60,7 +62,7 @@ int	rotate_oper(t_stack *stack, char *str)
 		else
 			return (reverse_rotate_oper(stack, str));
 	}
-	if (str[2] != '\n' || str[3] != '\0')
+	if (!(str[1] != '\0' && str[2] == '\n' && str[3] == '\0'))
 		return (1);
 	if (str[1] == 'a')
 		return (str[2] == ra_b(stack));
