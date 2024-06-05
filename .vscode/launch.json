@@ -1,0 +1,26 @@
+{
+	// IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+	// 기존 특성에 대한 설명을 보려면 가리킵니다.
+	// 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug bonus",
+			"program": "${workspaceFolder}/debug_bonus.out",
+			"args": ["1 3 2"],
+			"cwd": "${workspaceFolder}",
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "Debug Mandatory",
+			"program": "${workspaceFolder}/debug.out",
+			"args": ["61 86 7 57 4 77 22 73 47 75 27 51 15 43 96 99 31 66 6 16 55 88 90 94 54 89 40 25 79 48 12 84 24 33 34 76 62 64 49 65 11 9 87 18 93 97 19 8 56 78 69 2 39 85 59 58 29 36 5 67 26 14 98 72 70 1 81 42 37 91 30 13 23 28 35 74 71 83 44 46 41 82 92 45 17 3 53 80 63 32 21 100 20 50 68 10 52 60 95 38"],
+			//"args":["6 5 4 3 2 1"],
+			//"args": ["1 2 3 4 5 6 7 8"],
+			"cwd": "${workspaceFolder}",
+		}
+	]
+}

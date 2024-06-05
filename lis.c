@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 02:24:18 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 17:22:55 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/05 17:59:43 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ long	lower_bound(long *arr, int size, long target)
 	return (left);
 }
 
-//dp는 memset으로 0으로 초기화, temp는 0번째 인덱스가 음수
 void	fill_dp(long *arr, long *dp, long *temp, int size)
 {
 	long	temp_size;
@@ -50,7 +49,6 @@ void	fill_dp(long *arr, long *dp, long *temp, int size)
 	}
 }
 
-//temp의 길이 == LIS 길이
 int	get_lis_len(long *temp)
 {
 	int	lis_len;
@@ -77,8 +75,6 @@ void	make_lis_fill_ret(long *arr, long *dp, long *ret, long find_idx)
 	}
 }
 
-// 최종적으로 만드는 함수
-// arr, dp, temp는 알아서 만들어서 념겨줘야함
 long	*make_lis(long *arr, long *dp, long *temp, int size)
 {
 	long	*ret;

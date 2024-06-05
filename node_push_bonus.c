@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 21:09:11 by junmlee           #+#    #+#             */
-/*   Updated: 2024/04/14 20:43:18 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/05 18:01:13 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	pb_b(t_stack *stack)
 	t_node	*temp;
 
 	if (stack->a_head == NULL)
-		return (1);
+		return (0);
 	temp = stack->a_head;
 	stack->a_head = stack->a_head->next;
 	if (stack->a_head == NULL)
@@ -39,7 +39,7 @@ int	pa_b(t_stack *stack)
 	t_node	*temp;
 
 	if (stack->b_head == NULL)
-		return (1);
+		return (0);
 	temp = stack->b_head;
 	stack->b_head = stack->b_head->next;
 	if (stack->b_head == NULL)
